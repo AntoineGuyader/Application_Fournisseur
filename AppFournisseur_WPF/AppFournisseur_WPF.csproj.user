@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Pages\Page_Accueil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Page_Adresse_Form.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Page_Article.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Page_Articles.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Page_Test.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="StaticResources\Btn_BasicBtn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\Btn_MainMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\Btn_Main_Menu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\Btn_Main_Menu_Index.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\Label_BasicTitle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\Label_Basic_Form.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\Page_BasicMainFrame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\RadioBtn_MainMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\TextBlock_BasicTitle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\TextBox_Basic_Form.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaticResources\TextBox_SearchBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Page_Accueil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Page_Adresse_Form.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Page_Article.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Page_Articles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Page_Test.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,23 @@
+﻿<Application x:Class="AppFournisseur_WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AppFournisseur_WPF"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="StaticResources/Btn_BasicBtn.Xaml"/>
+                <ResourceDictionary Source="StaticResources/Btn_Main_Menu.Xaml"/>
+                <ResourceDictionary Source="StaticResources/Btn_Main_Menu_Index.Xaml"/>
+                <ResourceDictionary Source="StaticResources/Btn_MainMenu.Xaml"/>
+                <ResourceDictionary Source="StaticResources/Label_Basic_Form.Xaml"/>
+                <ResourceDictionary Source="StaticResources/Label_BasicTitle.Xaml"/>
+                <ResourceDictionary Source="StaticResources/Page_BasicMainFrame.Xaml"/>
+                <ResourceDictionary Source="StaticResources/RadioBtn_MainMenu.Xaml"/>
+                <ResourceDictionary Source="StaticResources/TextBlock_BasicTitle.Xaml"/>
+                <ResourceDictionary Source="StaticResources/TextBox_Basic_Form.Xaml"/>
+                <ResourceDictionary Source="StaticResources/TextBox_SearchBar.Xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

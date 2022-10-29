@@ -1,0 +1,86 @@
+﻿<Page x:Class="AppFournisseur_WPF.Views.Pages.Page_Adresse_Form"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppFournisseur_WPF.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page_Adresse_Form"
+      Style="{StaticResource Basic_Main_Frame}"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <!-- <Label Content="Formulaire d'adresse"/> -->
+         <Label Content="Formulaire d'adresse" Style="{StaticResource Label_BasicTitle}"/>
+        
+
+        <Grid Grid.Row="1" Margin="30,0,30,0"
+              Background="#FFDAD6D6" AutomationProperties.IsRequiredForForm="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Formulaire d'adresse -->
+            <Label Content="Ville : "
+                   Style="{StaticResource LabelForm}"
+                   Grid.Column="0" Grid.Row="0"/>
+            <Label Content="Nom de la rue : "
+                   Style="{StaticResource LabelForm}"
+                   Grid.Column="0" Grid.Row="1"/>
+            <Label Content="Numéro de la rue : "
+                   Style="{StaticResource LabelForm}"
+                   Grid.Column="0" Grid.Row="2"/>
+            <Label Content="Code postal : "
+                   Style="{StaticResource LabelForm}"
+                   Grid.Column="0" Grid.Row="3"/>
+            <Label Content="Pays"
+                   Style="{StaticResource LabelForm}"
+                   Grid.Column="0" Grid.Row="4"/>
+            <Label Content="Complément d'adresse : "
+                   Style="{StaticResource LabelForm}"
+                   Grid.Column="0" Grid.Row="5"
+                   Margin="0,10,0,0"/>
+
+            <TextBox x:Name="FormVille" Style="{StaticResource TextBox_BasicForm}"
+                     Grid.Column="1" Grid.Row="0"/>
+            <TextBox x:Name="FormNomRue" Style="{StaticResource TextBox_BasicForm}"
+                     Grid.Column="1" Grid.Row="1"/>
+            <TextBox x:Name="FormNumRue" Style="{StaticResource TextBox_BasicForm}"
+                     Grid.Column="1" Grid.Row="2"/>
+            <TextBox x:Name="FormCP" Style="{StaticResource TextBox_BasicForm}"
+                     Grid.Column="1" Grid.Row="3"/>
+            <ComboBox x:Name="FormPays"
+                      Grid.Column="1" Grid.Row="4"
+                      Height="25" Width="300">
+                
+            </ComboBox>
+            <TextBox x:Name="FormComplement" Style="{StaticResource TextBox_BasicForm}"
+                     Grid.Column="1" Grid.Row="5" Grid.RowSpan="2"
+                     Height="70"/>
+        </Grid>
+
+        <!-- Bouton de validation -->
+        <Button Content="Valider" x:Name="Btn_Validation_Adresse"
+                Click="Btn_Validation_Adresse_Click"
+                Style="{StaticResource Basic_Btn}"
+                Grid.Row="2"/>
+    </Grid>
+</Page>
