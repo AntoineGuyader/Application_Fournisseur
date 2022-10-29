@@ -45,6 +45,13 @@ namespace AppFournisseur_WPF.Models
             set { _qte_alerte = value; }
         }
 
+        private int _fournisseur;
+        public int fournisseur
+        {
+            get { return _fournisseur; }
+            set { _fournisseur = value; }
+        }
+
         private int _categorie;
         public int categorie
         {

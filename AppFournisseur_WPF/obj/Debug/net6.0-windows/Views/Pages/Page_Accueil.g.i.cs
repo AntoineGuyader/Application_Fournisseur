@@ -61,7 +61,7 @@ namespace AppFournisseur_WPF.Views.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AppFournisseur_WPF;V1.0.0.0;component/views/pages/page_accueil.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AppFournisseur_WPF;component/views/pages/page_accueil.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Pages\Page_Accueil.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

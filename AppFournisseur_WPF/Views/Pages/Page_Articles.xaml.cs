@@ -29,6 +29,7 @@ namespace AppFournisseur_WPF.Views.Pages
         {
             InitializeComponent();
             ListViewArticles.ItemsSource = DataTableArticles().DefaultView;
+
         }
         public ObservableCollection<Produit_Ref> ListArticles()
         {

@@ -23,8 +23,9 @@ namespace AppFournisseur_WPF.Views.Pages
     /// </summary>
     public partial class Page_Article : Page
     {
-        public Produit_Ref current_article;
         MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
+        public Produit_Ref current_article;
+        public Fournisseur fournisseur;
         public Page_Article(int identifiant)
         {
             InitializeComponent();
@@ -33,11 +34,15 @@ namespace AppFournisseur_WPF.Views.Pages
         public Produit_Ref CurrentArticle(int id)
         {
             Produit_Ref article = MV_Article.GetOneArticle(id);
+            
+            fournisseur = MV_Fournisseur.GetOneSupplier(article.fournisseur);
+
             return article;
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Title_ArticlePage.Text = "Page du produit " + current_article.nom_ref;
+            SupplierName.Content = fournisseur.raison_social;
         }
 
         private void Btn_ListArticle_Click(object sender, RoutedEventArgs e)

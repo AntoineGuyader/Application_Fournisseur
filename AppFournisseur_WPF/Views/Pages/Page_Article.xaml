@@ -50,6 +50,10 @@
             <Label Content="Le fournisseur" Style="{StaticResource LabelForm}"
                    Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0"
                    HorizontalAlignment="Center"/>
+            <Label Content="Nom du fournisseur : " Style="{StaticResource LabelForm}"
+                   Grid.Column="2" Grid.Row="1"/>
+            <Label Name="SupplierName"  Style="{StaticResource LabelForm}"
+                   Grid.Column="3" Grid.Row="1"/>
         </Grid>
 
         <!-- Footer -->

@@ -41,8 +41,9 @@ namespace AppFournisseur_WPF.DAL
                 article.qte_stock = (float)reader.GetDouble(3);
                 article.qte_commande = (float)reader.GetDouble(4);
                 article.qte_alerte = (float)reader.GetDouble(5);
-                article.categorie = reader.GetInt32(6);
-                article.unite_mesure = reader.GetInt32(7);
+                article.fournisseur = reader.GetInt32(6);
+                article.categorie = reader.GetInt32(7);
+                article.unite_mesure = reader.GetInt32(8);
                 list.Add(article);
             }
             _connection.Close();
@@ -65,8 +66,9 @@ namespace AppFournisseur_WPF.DAL
                 article.qte_stock = (float)reader.GetDouble(3);
                 article.qte_commande = (float)reader.GetDouble(4);
                 article.qte_alerte = (float)reader.GetDouble(5);
-                article.categorie = reader.GetInt32(6);
-                article.unite_mesure = reader.GetInt32(7);
+                article.fournisseur = reader.GetInt32(6);
+                article.categorie = reader.GetInt32(7);
+                article.unite_mesure = reader.GetInt32(8);
             }
             _connection.Close();
             return article;
