@@ -61,7 +61,7 @@ namespace AppFournisseur_WPF
                 if (Btn_Command.IsChecked == true) MainFrame.Content = new Page_Test();
                 else
                 {
-                    if (Btn_Suppliers.IsChecked == true) MainFrame.Content = new Page_Test();
+                    if (Btn_Suppliers.IsChecked == true) MainFrame.Content = new Page_Fournisseurs();
                     else
                     {
                         if (Btn_Articles.IsChecked == true) MainFrame.Content = new Page_Articles();

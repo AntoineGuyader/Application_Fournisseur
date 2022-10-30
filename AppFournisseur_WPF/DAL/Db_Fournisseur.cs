@@ -29,7 +29,7 @@ namespace AppFournisseur_WPF.DAL
         {
             ObservableCollection<Fournisseur> collection = new ObservableCollection<Fournisseur>();
             _connection.Open();
-            string query = "SELECT * FROM Fournisseurs";
+            string query = "SELECT * FROM Fournisseur";
             SqlCommand cmd = new SqlCommand(query, _connection);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())

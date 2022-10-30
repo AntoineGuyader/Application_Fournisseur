@@ -49,6 +49,11 @@ namespace AppFournisseur_WPF.DAL
             _connection.Close();
             return list;
         }
+        /// <summary>
+        /// Renvoie un article en fonction de son identifiant
+        /// </summary>
+        /// <param name="identifiant"></param>
+        /// <returns>Produit_Ref</returns>
         public Produit_Ref OneArticle(int identifiant)
         {
             _connection.Open();
