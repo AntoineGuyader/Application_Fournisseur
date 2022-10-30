@@ -24,35 +24,51 @@ namespace AppFournisseur_WPF.Views.Pages
     /// </summary>
     public partial class Page_Fournisseurs : Page
     {
-        ObservableCollection<Fournisseur> ListOfSuppliers { get; set; }
         public Page_Fournisseurs()
         {
             InitializeComponent();
-            ListOfSuppliers = MV_Fournisseur.GetAllSuppliers();
-            //AllSuppliers();
+            AllSuppliers();
             //SuppliersGroupBy();
 
             ObservableCollection<Fournisseur> monTest = MV_Fournisseur.GetAllSuppliers();
-            ListOfSuppliers = MV_Fournisseur.GetAllSuppliers();
-            int zero = 0;
+
+            var query = monTest.Where(fournisseur => fournisseur.inactif == true);
         }
 
         private void AllSuppliers()
         {
             ListAllSuppliers.ItemsSource = MV_Fournisseur.GetAllSuppliers();
-            //var test = monTest
-            // ListAllSuppliers.ItemsSource = MV_Fournisseur.GetAllSuppliers().OrderBy(fournisseur => fournisseur.inactif);
-            // ListAllSuppliers.ItemsSource = MV_Fournisseur.GetAllSuppliers().Select(fournisseur => fournisseur.inactif == false);
-            // ListAllSuppliers.ItemsSource = MV_Fournisseur.GetAllSuppliers().GroupBy(fournisseur => fournisseur.inactif = true);
-            // ListAllSuppliers.ItemsSource = MV_Fournisseur.GetAllSuppliers().GroupBy(fournisseur => fournisseur.inactif = false);
-            int zero = 0;
         }
         private void SuppliersGroupBy()
         {
-            ListAllSuppliers.Items.GroupDescriptions.Clear();
-            string property = ComboBox_SuppliersGroupBy.SelectedItem.ToString();
+            //ListAllSuppliers.Items.GroupDescriptions.Clear();
+            string property = ComboBox_SuppliersGroupBy.SelectedValue.ToString();
+            int un = 1 ;
+            // ListAllSuppliers.Items.Clear();
 
-            //if (property == "Actif") ListAllSuppliers.
+            if (property == "Actif")
+            {
+                var activeSupppliers = MV_Fournisseur.GetAllSuppliers().Where(fournisseur => fournisseur.inactif == false).ToList();
+                List<Fournisseur> list = activeSupppliers;
+                int deux = 2;
+                ListAllSuppliers.ItemsSource = activeSupppliers;
+            }
+            else
+            {
+                if (property == "Inactif")
+                {
+                    var inactiveSuppliers = MV_Fournisseur.GetAllSuppliers().Where(fournisseur => fournisseur.inactif == true);
+                    MessageBox.Show("Fournisseurs inactifs");
+                }
+                else
+                {
+                    if (property == "Actif et Inactif")
+                    {
+                        var allSuppliers = MV_Fournisseur.GetAllSuppliers().OrderBy(fournisseur => fournisseur.inactif);
+                        MessageBox.Show("Tous les fournisseurs");
+                    }
+                }
+            }
 
 
             
@@ -60,7 +76,7 @@ namespace AppFournisseur_WPF.Views.Pages
         }
         private void SuppliersGroupBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            SuppliersGroupBy();
         }
     }
 }

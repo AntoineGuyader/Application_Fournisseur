@@ -26,6 +26,7 @@
                 VerticalAlignment="Center" HorizontalAlignment="center"/>
         <ComboBox Name="ComboBox_SuppliersGroupBy" SelectedIndex="0"
                   SelectionChanged="SuppliersGroupBy_SelectionChanged"
+                  SelectedValuePath="Content"
                   Width="150" Height="20" VerticalAlignment="Top"
                   Grid.Column="1" Grid.Row="1" Margin="0,10">
             <ComboBoxItem Content="Actif"/>
