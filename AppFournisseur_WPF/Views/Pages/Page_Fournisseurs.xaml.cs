@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,53 +28,44 @@ namespace AppFournisseur_WPF.Views.Pages
         public Page_Fournisseurs()
         {
             InitializeComponent();
-            AllSuppliers();
-            //SuppliersGroupBy();
-
-            ObservableCollection<Fournisseur> monTest = MV_Fournisseur.GetAllSuppliers();
-
-            var query = monTest.Where(fournisseur => fournisseur.inactif == true);
+            SuppliersGroupBy();
         }
-
-        private void AllSuppliers()
-        {
-            ListAllSuppliers.ItemsSource = MV_Fournisseur.GetAllSuppliers();
-        }
+        /// <summary>
+        /// Tri les fournisseurs selon s'ils sont actifs, inactifs ou les deux
+        /// </summary>
         private void SuppliersGroupBy()
         {
-            //ListAllSuppliers.Items.GroupDescriptions.Clear();
             string property = ComboBox_SuppliersGroupBy.SelectedValue.ToString();
-            int un = 1 ;
-            // ListAllSuppliers.Items.Clear();
-
-            if (property == "Actif")
+            ObservableCollection<Fournisseur> allSuppliers = MV_Fournisseur.GetAllSuppliers();
+            if (ListAllSuppliers != null)
             {
-                var activeSupppliers = MV_Fournisseur.GetAllSuppliers().Where(fournisseur => fournisseur.inactif == false).ToList();
-                List<Fournisseur> list = activeSupppliers;
-                int deux = 2;
-                ListAllSuppliers.ItemsSource = activeSupppliers;
-            }
-            else
-            {
-                if (property == "Inactif")
+                ListAllSuppliers.VerticalContentAlignment = VerticalAlignment.Center;
+                ListAllSuppliers.Items.DetachFromSourceCollection();
+                if (property == "Actif")
                 {
-                    var inactiveSuppliers = MV_Fournisseur.GetAllSuppliers().Where(fournisseur => fournisseur.inactif == true);
-                    MessageBox.Show("Fournisseurs inactifs");
+                    ListAllSuppliers.ItemsSource = allSuppliers.Where(fournisseur => fournisseur.inactif == false).ToList();
                 }
                 else
                 {
-                    if (property == "Actif et Inactif")
+                    if (property == "Inactif")
                     {
-                        var allSuppliers = MV_Fournisseur.GetAllSuppliers().OrderBy(fournisseur => fournisseur.inactif);
-                        MessageBox.Show("Tous les fournisseurs");
+                        ListAllSuppliers.ItemsSource = allSuppliers.Where(fournisseur => fournisseur.inactif == true).ToList();
+                    }
+                    else
+                    {
+                        if (property == "Actif et Inactif")
+                        {
+                            ListAllSuppliers.ItemsSource = allSuppliers.OrderBy(fournisseur => fournisseur.inactif);
+                        }
                     }
                 }
             }
-
-
-            
-            int zero = 0;
         }
+        /// <summary>
+        /// Utilise la fonction SupplierGroupBy pour modifier la liste des fourisseurs à chaque changement du combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SuppliersGroupBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SuppliersGroupBy();
